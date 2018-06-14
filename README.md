@@ -1,6 +1,6 @@
 This is a project for Free Code Camp
 
-============= Responsive Web Design Projects - Build a Technical Documentation Page ===========================================
+<strong>Responsive Web Design Projects - Build a Technical Documentation Page</strong>
 
 User Story #1: I can see a main element with a corresponding id="main-doc", which contains the page's main content (technical documentation).
 
