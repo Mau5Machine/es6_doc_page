@@ -1,14 +1,94 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/main.css">
     <title>ES6 Documentation</title>
 </head>
-<body>
 
+<body>
+    <div class="wrapper"> <!-- Site Wrapper-->
+        <!-- NAVBAR -->
+        <nav id="navbar" class="sidenav item">
+            <header>Basic CSS</header>
+            <a href="#intro" class="nav-link">Introduction</a>
+            <a href="#how_css_works" class="nav-link">How CSS Works</a>
+            <a href="#what_is_css" class="nav-link">What is CSS?</a>
+            <a href="#how_does_css_affect_html" class="nav-link">How does CSS affect HTML</a>
+            <a href="#css_example" class="nav-link">A quick CSS example</a>
+        </nav>
+
+
+
+
+
+
+        <!-- Beginning of MAIN content here -->
+        <main class="item" id="main-doc">
+            <section class="main-section" id="intro">
+                <header>
+                    <h2>Introduction to CSS</h2>
+                </header>
+                <p>CSS is used to style and lay out web pages — for example, to alter the font, colour, size and spacing of your content, split it into multiple columns, or add animations and other decorative features. This module gets you started on the path to CSS mastery with the basics of how it works, including selectors and properties, writing CSS rules, applying CSS to HTML, how to specify length, colour, and other units in CSS, cascade and inheritance, and debugging CSS.</p>
+                </section>
+            <section class="main-section" id="how_css_works">
+                <header>How CSS Works</header>
+                <p>CSS (Cascading Style Sheets) allows you to create great looking web pages, but how does it work under the hood? This article explains what CSS is, how the browser turns HTML into a Document Object Model (DOM), how CSS is applied to parts of the DOM, some very basic syntax examples, and what code is used to actually include our CSS in our web page.</p>
+            </section>
+            <section class="main-section" id="what_is_css">
+                    <header>What is CSS?</header>
+                    <p>CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.</p>
+                    <ul>
+                        <li>A document is usually a text file structured using a markup language — HTML is the most common markup language, but you will also come across other markup languages such as SVG or XML.</li>
+                        <li>Presenting a document to a user means converting it into a usable form for your audience. Browsers, like Firefox, Chrome or Internet Explorer, are designed to present documents visually, for example, on a computer screen, projector or printer.</li>
+                    </ul>
+                </section>
+                <section class="main-section" id="how_does_css_affect_html">
+                        <header>What is CSS?</header>
+                        <p>Web browsers apply CSS rules to a document to affect how they are displayed. A CSS rule is formed from:</p>
+                        <ul>
+                            <li>A set of properties, which have values set to update how the HTML content is displayed, for example I want my element's width to be 50% of its parent element, and its background to be red.</li>
+                            <li>A selector, which selects the element(s) you want to apply the updated property values to. For example, I want to apply my CSS rule to all the paragraphs in my HTML document.</li>
+                        </ul>
+                            <p>A set of CSS rules contained within a stylesheet determines how a webpage should look.</p>
+                    </section>
+                    <section class="main-section" id="css_example">
+                            <header>CSS Example</header>
+                            <p>The above descriptions may or may not have made sense, so let's make sure things are clear by presenting a quick example. First of all, let's take a simple HTML document, containing an &lt; h1 &gt; and a &lt; p &gt; (notice that a stylesheet is applied to the HTML using a &lt; link &gt; element):</p>
+                            <pre>
+                            <code>
+h1 {
+      color: blue;
+      background-color: yellow;
+      border: 1px solid black;
+    }
     
+p {
+      color: red;
+    }                                   
+                            </code>
+                            </pre>
+                                <p>The first rule starts with an h1 selector, which means that it will apply its property values to the <h1> element. It contains three properties and their values (each property/value pair is called a declaration):</p>
+                                    <ul>
+                                        <li>The first one sets the text color to blue.</li>
+                                        <li>The second sets the background color to yellow.</li>
+                                        <li>The third one puts a border around the header that is 1 pixel wide, solid (not dotted, or dashed, etc.), and colored black.</li>
+                                    </ul>
+                        </section>
+            <section class="main-section">
+
+            </section>
+            <section class="main-section">
+
+            </section>
+
+
+        </main>
+    </div>
+    <!-- End of Wrapper -->
 
 
 
@@ -17,5 +97,7 @@
 
 
 </body>
+<script src="js/main.js"></script>
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
 </html>

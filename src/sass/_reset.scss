@@ -46,3 +46,20 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+pre code {
+	background-color: rgb(0, 0, 0);
+	border: 1px solid white;
+	display: block;
+	padding: 20px;
+	color: white;
+}
+h2 {
+	font-size: 1.7em;
+	font-weight: bold;
+}
+pre code {
+	max-width: 300px;
+}
+section {
+	max-width: 80%;
+}

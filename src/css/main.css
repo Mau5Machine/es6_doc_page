@@ -45,10 +45,86 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  background: blue; }
+pre code {
+  background-color: black;
+  border: 1px solid white;
+  display: block;
+  padding: 20px;
+  color: white; }
 
-@media only screen and (min-width: 815px) {
-  body {
-    background: gray; } }
-/* end media query */
+h2 {
+  font-size: 1.7em;
+  font-weight: bold; }
+
+pre code {
+  max-width: 300px; }
+
+section {
+  max-width: 80%; }
+
+/*=========================== NAVBAR STYLING ================================*/
+#navbar {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  box-shadow: 3px 3px 10px black; }
+  #navbar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 2px solid black; }
+  #navbar header {
+    font-size: 22px;
+    margin-left: 2%;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    padding: 10px; }
+
+#navbar a:hover {
+  color: gray; }
+
+/*=========================== MAIN CONTENT STYLING ================================*/
+main {
+  margin-left: 25%;
+  padding: 20px;
+  line-height: 1.2em; }
+  main header {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.2em; }
+  main section {
+    padding: 20px;
+    border-bottom: 2px solid black; }
+
+@media only screen and (max-width: 850px) {
+  /*========================== MOBILE QUERY MIN 850PX ==========================*/
+  html, body {
+    min-width: 300px; }
+
+  /*=========================== NAVBAR STYLING ================================*/
+  #navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 200px;
+    width: 100%; }
+
+  main {
+    position: relative;
+    width: 100%;
+    margin-top: 300px;
+    margin-left: 2%;
+    padding: 10px; }
+
+  /*============================== MAIN CONTENT STYLING ==================*/
+  .wrapper {
+    max-width: 93%; } }

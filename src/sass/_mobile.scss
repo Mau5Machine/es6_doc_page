@@ -1,0 +1,23 @@
+/*========================== MOBILE QUERY MIN 850PX ==========================*/
+html, body { 
+    min-width: 300px;
+}
+/*=========================== NAVBAR STYLING ================================*/
+#navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 200px;
+    width: 100%;
+}
+main {
+    position: relative;
+    width: 100%;
+    margin-top: 300px;
+    margin-left: $gutter;
+    padding: 10px;
+}
+/*============================== MAIN CONTENT STYLING ==================*/
+.wrapper {
+    max-width: 93%;
+}
