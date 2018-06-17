@@ -6,19 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/main.css">
-    <title>GitHub with VSCode</title>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans" rel="stylesheet">
+    <title>jQuery HTML</title>
 </head>
 
 <body>
-    <div class="wrapper"> <!-- Site Wrapper-->
+    <div class="wrapper">
+        <!-- Site Wrapper-->
         <!-- NAVBAR -->
         <nav id="navbar" class="sidenav item">
-            <header>GitHub Guide</header>
-            <a href="#intro" class="nav-link">Getting Started</a>
-            <a href="#get_the_git" class="nav-link">Get the Git</a>
-            <a href="#vscode_setup_terminal" class="nav-link">Setup VSCode Terminal</a>
-            <a href="#how_does_css_affect_html" class="nav-link">How does CSS affect HTML</a>
-            <a href="#css_example" class="nav-link">A quick CSS example</a>
+            <header>jQuery HTML</header>
+            <a href="#Get_Content_and_Attributes" class="nav-link">Get Content and Attributes</a>
+            <a href="#Set_Content_and_Attributes" class="nav-link">Set Content and Attributes</a>
+            <a href="#jQuery_Add_Elements" class="nav-link">jQuery Add Elements</a>
+            <a href="#jQuery_Remove_Elements" class="nav-link">jQuery Remove Elements</a>
+            <a href="#jQuery_Manipulating_CSS" class="nav-link">jQuery Manipulating CSS</a>
+            <a href="#Reference" class="nav-link">Reference</a>
         </nav>
 
 
@@ -28,80 +31,343 @@
 
         <!-- Beginning of MAIN content here -->
         <main class="item" id="main-doc">
-            <section class="main-section" id="intro">
+            <section class="main-section" id="Get_Content_and_Attributes">
                 <header>
-                    <h2>Getting Started</h2>
+                    <h2>Get Content and Attributes</h2>
                 </header>
-                <p>This documentation will get you started on the basics of setting up GitHub on your local machine. I am also assuming you have a basic idea of what GitHub is and a basic understanding of how it works. I will go over just the basic commands and how to work with GitHub in VSCode. I am a VSCode user and I use <a href="https://git-scm.com/downloads">Git Bash</a> as my integrated terminal. I hope this is helpful for anyone that is having a hard time setting up Git within VSCode. I was a little confused in the beginning, but as soon as I figured it out, it was a piece of cake!</p>
-                <p>By the end of this, you will learn to:</p>
+                <p>jQuery contains powerful methods for changing and manipulating HTML elements and attributes.</p>
+                <p>One very important part of jQuery is the possibility to manipulate the DOM. jQuery comes with a bunch of
+                    DOM related methods that make it easy to access and manipulate elements and attributes.</p>
+                <h3>Get Content - text(), html(), and val()</h3>
+                <p>Three simple, but useful, jQuery methods for DOM manipulation are:</p>
                 <ul>
-                    <li>Set up github on your local machine</li>
-                    <li>Use the command line to push and commit to github</li>
-                    <li>Setup a .gitignore file</li>
-                    <li>Connect to your repository with the command line</li>
-                    <li>Check status of files of staged files</li>
+                    <li>text() - Sets or returns the text content of selected elements</li>
+                    <li>html() - Sets or returns the content of selected elements (including HTML markup)</li>
+                    <li>val() - Sets or returns the value of form fields</li>
                 </ul>
-                </section>
-            <section class="main-section" id="get_the_files">
-                <header>Get the Git</header>
-                <p>First of all, you need to download the appropriate files to begin the setup proccess. Assuming you already have VSCode installed on your machine, let's grab the git software:</p>
+                <p>The following example demonstrates how to get content with the jQuery text() and html() methods:</p>
+                <pre>
+<code>
+$("#btn1").click(function(){
+    alert("Text: " + $("#test").text());
+});
+$("#btn2").click(function(){
+    alert("HTML: " + $("#test").html());
+});   
+</code>
+                </pre>
+                <p>The following example demonstrates how to get the value of an input field with the jQuery val() method:</p>
+                <pre>
+<code>
+$("#btn1").click(function(){
+    alert("Value: " + $("#test").val());
+});   
+</code>
+                </pre>
+                <h3>Get Attributes - attr()</h3>
+                <p>The jQuery attr() method is used to get attribute values. The following example demonstrates how to get the
+                    value of the href attribute in a link:</p>
+                <pre>
+<code>
+$("button").click(function(){
+    alert($("#w3s").attr("href"));
+});    
+</code>
+                </pre>
+
+            </section>
+            <section class="main-section" id="Set_Content_and_Attributes">
+                <header>
+                    <h2>Set Content and Attributes</h2>
+                </header>
+                <h3>Set Content - text(), html(), and val()</h3>
+                <p>We will use the same three methods from the previous page to set content:</p>
                 <ul>
-                    <li>If you don't already have a GitHub account, make sure you go create one at <a href="http://github.com">GitHub.com</a></li>
-                    <li><a href="https://git-scm.com/downloads">Git v2.17.1</a></li>
-                    <li><a href="https://desktop.github.com/">GitHub desktop application</a> (You don't NEED this to procceed, but it is nice to have on your machine). All of the default settings and checkboxes are FINE when installing Git. In the second prompt where it asks to choose default editor, you can choose VsCode.</li>
-                    <li><a href="https://code.visualstudio.com/?wt.mc_id=adw-brand&gclid=Cj0KCQjw6pLZBRCxARIsALaaY9b2I1WM3Ft3XiMYSBCm8WNuHgT1oGgBjpi1oD25g5_tx44IiFpm9XkaAghAEALw_wcB">VSCode</a> (just in case you don't already have it)</li>
+                    <li>text() - Sets or returns the text content of selected elements</li>
+                    <li>html() - Sets or returns the content of selected elements (including HTML markup)</li>
+                    <li>val() - Sets or returns the value of form fields</li>
                 </ul>
-                <p>Install Git in an easy to find spot on your PC. I installed mine on my D: drive inside an empty folder named Git.  I recommend using the drive you save most of your projects on.</p>
-                <p>Same thing with the desktop app, that one lives in it's own file and a shortcut resides on my desktop.</p>
+                <p>The following example demonstrates how to set content with the jQuery text(), html(), and val() methods:</p>
+                <pre>
+<code>
+$("#btn1").click(function(){
+    $("#test1").text("Hello world!");
+});
+$("#btn2").click(function(){
+    $("#test2").html("<b>Hello world!</b>");
+});
+$("#btn3").click(function(){
+    $("#test3").val("Dolly Duck");
+});
+</code>
+                </pre>
+                <h3>A Callback Function for text(), html(), and val()</h3>
+                <p>All of the three jQuery methods above: text(), html(), and val(), also come with a callback function. The
+                    callback function has two parameters: the index of the current element in the list of elements selected
+                    and the original (old) value. You then return the string you wish to use as the new value from the function.</p>
+                <p>The following example demonstrates text() and html() with a callback function:</p>
+                <pre>
+<code>
+$("#btn1").click(function(){
+$("#test1").text(function(i, origText){
+    return "Old text: " + origText +
+    " Newtext: Hello world!
+    (index: " + i + ")"; 
+    });
+});
+        
+$("#btn2").click(function(){
+$("#test2").html(function(i, origText){
+    return "Old html: " + origText +
+    " New html: Hello &lt;b&gt;world!&lt;/b&gt;
+    (index: " + i + ")"; 
+    });
+});
+</code>
+                </pre>
+                <h3>Set Attributes - attr()</h3>
+                <p>The jQuery attr() method is also used to set/change attribute values.</p>
+                <p>The following example demonstrates how to change (set) the value of the href attribute in a link:</p>
+                <pre>
+<code>
+$("button").click(function(){
+$("#w3s").attr("href","https:url here");
+});
+</code>
+                </pre>
+                <p>The attr() method also allows you to set multiple attributes at the same time.
+                    <br> The following example demonstrates how to set both the href and title attributes at the same time:</p>
+                <pre>
+<code>
+$("button").click(function(){
+$("#w3s").attr("href", "https:url here");
+});
+</code>
+                </pre>
+                <p>The attr() method also allows you to set multiple attributes at the same time.
+                    <br> The following example demonstrates how to set both the href and title attributes at the same time:</p>
+                <pre>
+<code>
+$("button").click(function(){
+$("#w3s").attr({
+    "href" : "https:url here",
+    "title" : "W3Schools jQuery Tutorial"
+    });
+}); 
+</code>
+                    </pre>
+                <h3>A Callback Function for attr()</h3>
+                <p>The jQuery method attr(), also come with a callback function. The callback function has two parameters: the
+                    index of the current element in the list of elements selected and the original (old) attribute value.
+                    You then return the string you wish to use as the new attribute value from the function.</p>
+                <p>The following example demonstrates attr() with a callback function:</p>
+                <pre>
+<code>
+$("button").click(function(){
+$("#w3s").attr
+("href", function(i, origValue){
+    return origValue + "/jquery/"; 
+    });
+});
+</code>
+                    </pre>
             </section>
-            <section class="main-section" id="vscode_setup_terminal">
-                    <header>Setup VSCode Terminal</header>
-                    <p>Now that we have Git installed on our machine, we are going to setup our integrated terminal in </p>
-                    <ul>
-                        <li>A document is usually a text file structured using a markup language — HTML is the most common markup language, but you will also come across other markup languages such as SVG or XML.</li>
-                        <li>Presenting a document to a user means converting it into a usable form for your audience. Browsers, like Firefox, Chrome or Internet Explorer, are designed to present documents visually, for example, on a computer screen, projector or printer.</li>
-                    </ul>
-                </section>
-                <section class="main-section" id="how_does_css_affect_html">
-                        <header>What is CSS?</header>
-                        <p>Web browsers apply CSS rules to a document to affect how they are displayed. A CSS rule is formed from:</p>
-                        <ul>
-                            <li>A set of properties, which have values set to update how the HTML content is displayed, for example I want my element's width to be 50% of its parent element, and its background to be red.</li>
-                            <li>A selector, which selects the element(s) you want to apply the updated property values to. For example, I want to apply my CSS rule to all the paragraphs in my HTML document.</li>
-                        </ul>
-                            <p>A set of CSS rules contained within a stylesheet determines how a webpage should look.</p>
-                    </section>
-                    <section class="main-section" id="css_example">
-                            <header>CSS Example</header>
-                            <p>The above descriptions may or may not have made sense, so let's make sure things are clear by presenting a quick example. First of all, let's take a simple HTML document, containing an &lt; h1 &gt; and a &lt; p &gt; (notice that a stylesheet is applied to the HTML using a &lt; link &gt; element):</p>
-                            <pre>
-                            <code>
-h1 {
-      color: blue;
-      background-color: yellow;
-      border: 1px solid black;
-    }
-    
-p {
-      color: red;
-    }                                   
-                            </code>
-                            </pre>
-                                <p>The first rule starts with an h1 selector, which means that it will apply its property values to the <h1> element. It contains three properties and their values (each property/value pair is called a declaration):</p>
-                                    <ul>
-                                        <li>The first one sets the text color to blue.</li>
-                                        <li>The second sets the background color to yellow.</li>
-                                        <li>The third one puts a border around the header that is 1 pixel wide, solid (not dotted, or dashed, etc.), and colored black.</li>
-                                    </ul>
-                        </section>
-            <section class="main-section">
+            <section class="main-section" id="jQuery_Add_Elements">
+                <header>
+                    <h2>jQuery Add Elements</h2>
+                </header>
+                <h3>Add New HTML Content</h3>
+                <p>We will look at four jQuery methods that are used to add new content:</p>
+                <ul>
+                    <li>append() - Inserts content at the end of the selected elements</li>
+                    <li>prepend() - Inserts content at the beginning of the selected elements</li>
+                    <li>after() - Inserts content after the selected elements</li>
+                    <li>before() - Inserts content before the selected elements</li>
+                </ul>
+                <h3>jQuery append() Method</h3>
+                <p>The jQuery append() method inserts content AT THE END of the selected HTML elements.</p>
+                <pre>
+<code>
+$("p").append("Some appended text.");
+</code>
+                </pre>
+                <h3>jQuery prepend() Method</h3>
+                <p>The jQuery prepend() method inserts content AT THE BEGINNING of the selected HTML elements.</p>
+                <pre>
+<code>
+$("p").prepend("Some prepended text");
+</code>
+                </pre>
+                <h3>Add Several New Elements With append() and prepend()</h3>
+                <p>In both examples above, we have only inserted some text/HTML at the beginning/end of the selected HTML elements.</p>
+                <p>However, both the append() and prepend() methods can take an infinite number of new elements as parameters.
+                    The new elements can be generated with text/HTML (like we have done in the examples above), with jQuery,
+                    or with JavaScript code and DOM elements.</p>
+                <p>In the following example, we create several new elements. The elements are created with text/HTML, jQuery,
+                    and JavaScript/DOM. Then we append the new elements to the text with the append() method (this would
+                    have worked for prepend() too) :</p>
+                <pre>
+<code>
+function appendText() {
+var txt1 = "&lt;p&gt;Text.&lt;/p&gt;";
+// Create element with HTML  
+var txt2 = $("&lt;p&gt;&lt;/p&gt;").text("Text.");
+// Create with jQuery
+var txt3 = document.createElement("p");
+// Create with DOM
+txt3.innerHTML = "Text.";
+$("body").append(txt1, txt2, txt3);
+// Append the new elements 
+}
+</code>
+                </pre>
+                <h3>jQuery after() and before() Methods</h3>
+                <p>The jQuery after() method inserts content AFTER the selected HTML elements.
+                    <br> The jQuery before() method inserts content BEFORE the selected HTML elements.</p>
+                <pre>
+<code>
+$("img").after("Some text after");
+$("img").before("Some text before");
+</code>
+                    </pre>
+                <h3>Add Several New Elements With after() and before()</h3>
+                <p>Also, both the after() and before() methods can take an infinite number of new elements as parameters. The
+                    new elements can be generated with text/HTML (like we have done in the example above), with jQuery, or
+                    with JavaScript code and DOM elements.</p>
+                <p>In the following example, we create several new elements. The elements are created with text/HTML, jQuery,
+                    and JavaScript/DOM. Then we insert the new elements to the text with the after() method (this would have
+                    worked for before() too) :</p>
+                <pre>
+<code>
+function afterText() {
+var txt1 = "&lt;b&gt;I &lt;/b&gt;";
+// Create element with HTML  
+var txt2 = $("&lt;i&gt;&lt;/i&gt;").text("love ");
+// Create with jQuery
+var txt3 = document.createElement("b");
+// Create with DOM
+txt3.innerHTML = "jQuery!";
+$("img").after(txt1, txt2, txt3);
+// Insert new elements after &lt;img&gt;
+        }
+</code>
+                    </pre>
+            </section>
+            <section class="main-section" id="jQuery_Remove_Elements">
+                <header>
+                    <h2>jQuery Remove Elements</h2>
+                </header>
+                <h3>Remove Elements/Content</h3>
+                <p>To remove elements and content, there are mainly two jQuery methods:</p>
+                <ul>
+                    <li>remove() - Removes the selected element (and its child elements)</li>
+                    <li>empty() - Removes the child elements from the selected element</li>
+                </ul>
+                <h3>jQuery remove() Method</h3>
+                <p>The jQuery remove() method removes the selected element(s) and its child elements.</p>
+                <pre>
+<code>
+$("#div1").remove();
+</code>
+                </pre>
+                <h3>jQuery empty() Method</h3>
+                <p>The jQuery empty() method removes the child elements of the selected element(s).</p>
+                <pre>
+<code>
+$("#div1").empty();
+</code>
+                </pre>
+                <h3>Filter the Elements to be Removed</h3>
+                <p>The jQuery remove() method also accepts one parameter, which allows you to filter the elements to be removed.</p>
+                <p>The parameter can be any of the jQuery selector syntaxes.</p>
+                <p>The following example removes all
+                    <p> elements with class="test": </p>
+                    <pre>
+<code>
+$("p").remove(".test");
+</code>
+                </pre>
+                    <p>This example removes all
+                        <p> elements with class="test" and class="demo":</p>
+                        <pre>
+<code>
+$("p").remove(".test, .demo");
+</code>
+                </pre>
+            </section>
+            <section class="main-section" id="jQuery_Manipulating_CSS">
+                <header>
+                    <h2>jQuery Manipulating CSS</h2>
+                </header>
+                <p>jQuery has several methods for CSS manipulation. We will look at the following methods:</p>
+                <ul>
+                    <li>addClass() - Adds one or more classes to the selected elements</li>
+                    <li>removeClass() - Removes one or more classes from the selected elements</li>
+                    <li>toggleClass() - Toggles between adding/removing classes from the selected elements</li>
+                    <li>css() - Sets or returns the style attribute</li>
+                </ul>
+                <p>The following stylesheet will be used for all the examples on this page:</p>
+                <pre>
+<code>
+.important {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.blue {
+    color: blue;
+}
+</code>
+                </pre>
+                <h3>jQuery addClass() Method</h3>
+                <p>The following example shows how to add class attributes to different elements. Of course you can select multiple
+                    elements, when adding classes:</p>
+                <pre>
+<code>
+$("button").click(function(){
+    $("h1, h2, p").addClass("blue");
+    $("div").addClass("important");
+});
+</code>
+                </pre>
+                <p>You can also specify multiple classes within the addClass() method:</p>
+                <pre>
+<code>
+$("button").click(function(){
+    $("#div1").addClass("important blue");
+});
+</code>
+                </pre>
+                <h3>jQuery removeClass() Method</h3>
+                <p>The following example shows how to remove a specific class attribute from different elements:</p>
+                <pre>
+<code>
+$("button").click(function(){
+    $("h1, h2, p").removeClass("blue");
+});
+</code>
+                </pre>
+                <h3>jQuery toggleClass() Method</h3>
+                <p>The following example will show how to use the jQuery toggleClass() method. This method toggles between adding/removing
+                    classes from the selected elements:</p>
+                <pre>
+<code>
+$("button").click(function(){
+    $("h1, h2, p").toggleClass("blue");
+});
+</code>
+                </pre>
+            </section>
+            <section class="main-section" id="Reference">
+                <header>
+                    <h2>Reference</h2>
+                </header>
+                <p>The material on this site is from
+                    <a href="https://www.w3schools.com/Jquery/jquery_css_classes.asp">w3schools.com</a>
+                </p>
+
 
             </section>
-            <section class="main-section">
-
-            </section>
-
-
         </main>
     </div>
     <!-- End of Wrapper -->
